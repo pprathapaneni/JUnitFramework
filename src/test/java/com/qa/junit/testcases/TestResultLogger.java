@@ -49,9 +49,9 @@ public class TestResultLogger implements TestWatcher, AfterAllCallback{
     public void testSuccessful(ExtensionContext context) {
         LOG.info("Test Successful for test {}: ", context.getDisplayName());
         testResultsStatus.add(TestResultStatus.SUCCESSFUL);    
-        ExtentTest test = extent.createTest(context.getDisplayName(), "Test Passed");
+        ExtentTest test = extent.createTest(context.getDisplayName(), "Test Passed");//Name of the test
         
-        test.log(Status.PASS, "Test Passed");
+        test.log(Status.PASS, "Test Passed");//status and details(message to be displayed)
         flushReports(extent, test);
         
     }  
@@ -85,15 +85,16 @@ public class TestResultLogger implements TestWatcher, AfterAllCallback{
     }
     
     private ExtentReports createReport() {
-        htmlreporter = new ExtentHtmlReporter("./reports/extent.html");
+        htmlreporter = new ExtentHtmlReporter("./reports/extent.html");//location to save our file
+      //Setting configurations for the HTML Report.
 		htmlreporter.config().setEncoding("utf-8");
-		htmlreporter.config().setDocumentTitle("Automation Reports");
-		htmlreporter.config().setReportName("Automation Test Results");
-		htmlreporter.config().setTheme(Theme.DARK);
+		htmlreporter.config().setDocumentTitle("Automation Reports");//page title
+		htmlreporter.config().setReportName("Automation Test Results");//report title
+		htmlreporter.config().setTheme(Theme.DARK);//can be standard or dark background
 		
 		extent = new ExtentReports();
-		extent.setSystemInfo("Browser", "FF");
-		extent.attachReporter(htmlreporter);
+		extent.setSystemInfo("Browser", "FF");//setting environment. key value pair and can give anything
+		extent.attachReporter(htmlreporter);//attach html report to extent report.
 		return extent;
     } 
     

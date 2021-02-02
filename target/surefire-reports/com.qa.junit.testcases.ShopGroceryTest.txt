@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.qa.junit.testcases.ShopGroceryTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 73.544 s <<< FAILURE! - in com.qa.junit.testcases.ShopGroceryTest
+validateShopGroceryTitleTest  Time elapsed: 39.66 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Walmart Grocery Delivery & Pickup: Order Groceries online | Walmart Canada> but was: <Walmart Grocery Delivery &amp; Pickup: Order Groceries online | Walmart Canada>
+	at com.qa.junit.testcases.ShopGroceryTest.validateShopGroceryTitleTest(ShopGroceryTest.java:37)
+

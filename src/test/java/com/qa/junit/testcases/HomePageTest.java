@@ -3,12 +3,15 @@ package com.qa.junit.testcases;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.qa.junit.base.TestBase;
 import com.qa.junit.pages.HomePage;
 import com.qa.junit.pages.ShopGrocery;
+
 
 public class HomePageTest extends TestBase {
 	
@@ -26,6 +29,7 @@ public class HomePageTest extends TestBase {
 	}
 	
 	@Test
+	@DisplayName("HomePage Title")
 	@Order(1)
 	public void validateHomePageTitleTest() {
 		String title = homepage.validateHomePageTitle();
@@ -33,6 +37,7 @@ public class HomePageTest extends TestBase {
 	}
 	
 	@Test
+	@DisplayName("Walmart Image")
 	@Order(2)
 	public void validateWalmartImageTest() {
 		boolean flag = homepage.validateWalmartImage();
@@ -40,6 +45,7 @@ public class HomePageTest extends TestBase {
 	}
 	
 	@Test
+	@DisplayName("Shop Grocery")
 	@Order(3)
 	public void validateShopGroceryTest() {
 		shopgrocery = homepage.validateShopGrocery();

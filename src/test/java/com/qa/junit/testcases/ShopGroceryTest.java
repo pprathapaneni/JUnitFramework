@@ -3,6 +3,7 @@ package com.qa.junit.testcases;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,6 +30,7 @@ public class ShopGroceryTest extends TestBase{
 	}
 	
 	@Test
+	@DisplayName("ShopGrocery Title")
 	@Order(1)
 	public void validateShopGroceryTitleTest() {
 		String title = driver.getTitle();
@@ -36,6 +38,7 @@ public class ShopGroceryTest extends TestBase{
 	}
 	
 	@Test
+	@DisplayName("Grocery Options")
 	@Order(2)
 	public void validateGroceryOptionsTest() {
 		shopgrocery.validateGroceryOptions();
